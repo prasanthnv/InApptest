@@ -1,0 +1,40 @@
+<div class="container-fluid mt-5">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800 mb-4">Saved Articles</h1>
+
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0"
+                                role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="1" colspan="1">Title</th>
+                                        <th rowspan="1" colspan="1">Abstract</th>
+                                        <th rowspan="1" colspan="1"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="even" *ngFor="let slug of articles | keyvalue">
+                                        <td class="sorting_1">{{slug.value["title"]}}</td>
+                                        <td>{{slug.value["abstract"]}}</td>
+                                        <td><button>Read</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

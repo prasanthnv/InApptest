@@ -1,0 +1,16 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">{{article?.title}}</h6>
+    </div>
+    <div class="card-body">
+        <div class="text-center mb-4">
+            <img class="img-fluid" style="width: 25rem;" src="{{article?.thumbnail_standard}}" alt="...">
+        </div>
+        <p>{{article?.abstract}}</p>
+        <button href="#" class="btn  btn-light btn-icon-split" 
+        [class.border-bottom-success]="isSaved"
+        (click)="saveForLatter()">
+            <span class="text">{{isSaved ? 'Saved' : 'Save for latter'}}</span>
+        </button>
+    </div>
+</div>

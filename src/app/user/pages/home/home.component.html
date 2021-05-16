@@ -1,0 +1,21 @@
+<div class="home-container">
+    <app-sidebar [sections]="sections" (onselected)="selectSection($event)"></app-sidebar>
+    <div class="container-fluid py-5">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">{{sectionName || 'All News'}}</h1>
+        </div>
+        <div class="news-cards" *ngIf="!hasError;else noitemfound">
+            <div class="row">
+                <div class="col-6 col-sm-4 col-md-3" *ngFor="let article of articles">
+                    <app-article-card [article]="article" [isSaved]="isSaved(article)"></app-article-card>
+                </div>
+            </div>
+            
+        </div>
+
+        <ng-template #noitemfound>
+            <app-not-found></app-not-found>
+        </ng-template>
+    </div>
+
+</div>
