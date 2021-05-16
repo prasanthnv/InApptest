@@ -1,0 +1,9 @@
+.login-container{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    .bg-login-image{
+        background-image: url('https://picsum.photos/400/500?grayscale');
+    }
+}
