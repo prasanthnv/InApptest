@@ -7,10 +7,10 @@
         <div class="news-cards" *ngIf="!hasError;else noitemfound">
             <div class="row">
                 <div class="col-6 col-sm-4 col-md-3" *ngFor="let article of articles">
-                    <app-article-card [article]="article"></app-article-card>
+                    <app-article-card [article]="article" [isSaved]="isSaved(article)"></app-article-card>
                 </div>
             </div>
-            <app-pagination></app-pagination>
+            
         </div>
 
         <ng-template #noitemfound>

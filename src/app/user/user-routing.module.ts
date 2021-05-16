@@ -1,3 +1,4 @@
+import { ReadLatterComponent } from './pages/read-latter/read-latter.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './user.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'home/:section',
         component: HomeComponent,
+      },
+      {
+        path: 'saved',
+        component: ReadLatterComponent,
       },
       {
         path: 'profile',

@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   sections: Array<Section> = [];
   sectionName = '';
   hasError: boolean = false;
+  savedArticles:  Array<Article> = [];
   constructor(
     private articleService: ArticleService,
     private route: ActivatedRoute
@@ -40,6 +41,7 @@ this.fetchSections();
     this.articleService.getArticles(section).subscribe(res=>{
       this.hasError = false;
       this.articles = res.results;
+      this.savedArticles = this.articleService.getSaved();
     }, err=>{
       this.hasError = true;
     })
@@ -48,5 +50,9 @@ this.fetchSections();
   selectSection(section: Section): void{
     console.log("selected => ", section);
     this.fetchArticles(section.section);
+  }
+
+  isSaved(article: Article){
+    return article.slug_name in this.savedArticles;
   }
 }
