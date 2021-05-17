@@ -14,4 +14,8 @@ articles = {}
     this.articles =  this.articleService.getSaved();
   }
 
+  removeArticle(slug: string){
+    this.articles =  this.articleService.removeSaved(slug)
+  }
+
 }

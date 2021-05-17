@@ -2,7 +2,7 @@
     <app-sidebar [sections]="sections" (onselected)="selectSection($event)"></app-sidebar>
     <div class="container-fluid py-5">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">{{sectionName || 'All News'}}</h1>
+            <h1 class="h3 mb-0 text-gray-800 text-capitalize">{{sectionName || 'All News'}}</h1>
         </div>
         <div class="news-cards" *ngIf="!hasError;else noitemfound">
             <div class="row">
