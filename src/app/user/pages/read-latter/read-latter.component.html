@@ -5,7 +5,7 @@
 
 
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-4" *ngIf="(articles | keyvalue)?.length">
 
         <div class="card-body">
             <div class="table-responsive">
@@ -19,13 +19,15 @@
                                         <th rowspan="1" colspan="1">Title</th>
                                         <th rowspan="1" colspan="1">Abstract</th>
                                         <th rowspan="1" colspan="1"></th>
+                                        <th rowspan="1" colspan="1"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="even" *ngFor="let slug of articles | keyvalue">
                                         <td class="sorting_1">{{slug.value["title"]}}</td>
                                         <td>{{slug.value["abstract"]}}</td>
-                                        <td><button>Read</button></td>
+                                        <td><a [href]="slug.value['url']" target="_blank" class="btn btn-primary">Read</a></td>
+                                        <td><a (click)="removeArticle(slug.value['slug_name'])" class="btn btn-danger">Remove</a></td>
                                     </tr>
                                 </tbody>
                             </table>

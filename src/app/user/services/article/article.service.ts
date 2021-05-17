@@ -41,7 +41,8 @@ export class ArticleService {
           title: article.title,
           abstract: article.abstract,
           section: article.section,
-          slug_name: article.slug_name
+          slug_name: article.slug_name,
+          url: article.url
         };
         localStorage.setItem('articles', JSON.stringify(items));
       }
@@ -51,5 +52,16 @@ export class ArticleService {
   getSaved(){
     let items = JSON.parse(localStorage.getItem('articles') || '{}');
    return items;
+  }
+
+  removeSaved(slug: string){
+    let saved = this.getSaved();
+    console.log(slug)
+    if(slug in saved){
+      console.log(slug)
+      delete saved[slug];
+    }
+    localStorage.setItem('articles', JSON.stringify(saved));
+    return saved;
   }
 }

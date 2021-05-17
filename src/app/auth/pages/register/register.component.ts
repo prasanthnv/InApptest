@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
   });
-  name: string = 'qe';
+  name: string = '';
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}

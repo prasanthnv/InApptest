@@ -21,7 +21,11 @@ export class LoginComponent implements OnInit {
     private router: Router
     ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(localStorage.getItem('loggeduser')){
+      this.router.navigate(['/user'])
+    }
+  }
 
   login() {
     this.formSubmitted = true;
